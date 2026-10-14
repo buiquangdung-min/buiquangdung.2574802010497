@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xúc Xắc May Mắn</title>
+</head>
+<body>
+    <div class="container">
+        <h2> Xúc xắc may mắn</h2>
+        <p>Nhấn nút bên dưới để lắc xúc xắc:</p>
+        
+        <!-- Nút Lắc xúc xắc -->
+        <button onclick="rollDice()">🎲 Lắc xúc xắc</button>
+        
+        <!-- Hiển thị kết quả -->
+        <div class="result" id="diceResult">Kết quả: -</div>
+    </div>
+
+    <script>
+        function rollDice() {
+            // Sinh số ngẫu nhiên từ 1 đến 6
+            // Math.random() tạo số từ 0 đến <1 -> nhân 6 thành 0 đến <6 -> cộng 1 thành 1 đến 6 -> dùng Math.floor để lấy số nguyên
+            const diceNumber = Math.floor(Math.random() * 6) + 1;
+
+            // Hiển thị kết quả ra màn hình
+            document.getElementById('diceResult').innerText = 'Kết quả: ' + diceNumber;
+        }
+    </script>
+</body>
+</html>

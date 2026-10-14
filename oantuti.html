@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oan Tu Ti</title>
+</head>
+<body>
+</head>
+<body>
+
+    <h1>Trò chơi Oẳn tù tì</h1>
+    <p>Hãy chọn một trong các tùy chọn dưới đây:</p>
+
+    <div class="buttons">
+        <button onclick="play('Đá')">✊ Đá</button>
+        <button onclick="play('Giấy')">✋ Giấy</button>
+        <button onclick="play('Kéo')">✌️ Kéo</button>
+    </div>
+
+    <div class="result" id="playerChoice">Lựa chọn của bạn: -</div>
+    <div class="result" id="computerChoice">Lựa chọn của máy: -</div>
+    <div class="result" id="gameResult">Kết quả: -</div>
+
+    <script>
+        function play(playerSelection) {
+            // Mảng chứa các lựa chọn của máy
+            const choices = ['Đá', 'Giấy', 'Kéo'];
+            
+            // Máy chọn ngẫu nhiên một phần tử trong mảng
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            const computerSelection = choices[randomIndex];
+
+            // Xác định kết quả
+            let result = '';
+
+            if (playerSelection === computerSelection) {
+                result = 'Hòa!';
+            } else if (
+                (playerSelection === 'Đá' && computerSelection === 'Kéo') ||
+                (playerSelection === 'Giấy' && computerSelection === 'Đá') ||
+                (playerSelection === 'Kéo' && computerSelection === 'Giấy')
+            ) {
+                result = 'Bạn đã thắng! 🎉';
+            } else {
+                result = 'Bạn đã thua! 😢';
+            }
+
+            // Hiển thị kết quả ra màn hình
+            document.getElementById('playerChoice').innerText = 'Lựa chọn của bạn: ' + playerSelection;
+            document.getElementById('computerChoice').innerText = 'Lựa chọn của máy: ' + computerSelection;
+            document.getElementById('gameResult').innerText = 'Kết quả: ' + result;
+        }
+    </script>
+</body>
+</html>

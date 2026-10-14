@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+    <h2>Kiểm tra năm nhuận</h2>
+
+    Nhập năm:
+    <input type="number" id="nam">
+
+    <button onclick="kiemTra()">Kiểm tra</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            let nam = Number(document.getElementById("nam").value);
+
+            if (nam <= 0 || nam == "") {
+                document.getElementById("ketqua").innerHTML =
+                    "Vui lòng nhập năm hợp lệ";
+            } else if (nam % 400 == 0) {
+                document.getElementById("ketqua").innerHTML =
+                    nam + " là năm nhuận";
+            } else if (nam % 100 == 0) {
+                document.getElementById("ketqua").innerHTML =
+                    nam + " không phải năm nhuận";
+            } else if (nam % 4 == 0) {
+                document.getElementById("ketqua").innerHTML =
+                    nam + " là năm nhuận";
+            } else {
+                document.getElementById("ketqua").innerHTML =
+                    nam + " không phải năm nhuận";
+            }
+        }
+    </script>
+</body>
+</html>

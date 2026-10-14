@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Số Chẵn Lẽ</title>
+</head>
+<body> 
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bài 1. Kiểm tra số chẵn – số lẻ</h2>
+        <p>Nhập vào một số nguyên:</p>
+        
+        <!-- Ô nhập số nguyên -->
+        <input type="number" id="numberInput" placeholder="Nhập số...">
+        
+        <!-- Nút Kiểm tra -->
+        <button onclick="checkEvenOdd()">Kiểm tra</button>
+        
+        <!-- Hiển thị kết quả -->
+        <div class="result" id="resultText">Kết quả: -</div>
+    </div>
+
+    <script>
+        function checkEvenOdd() {
+            // Lấy giá trị từ ô input
+            const inputVal = document.getElementById('numberInput').value;
+
+            // Kiểm tra xem người dùng đã nhập số chưa
+            if (inputVal === '') {
+                document.getElementById('resultText').innerText = 'Vui lòng nhập vào một số!';
+                return;
+            }
+
+            // Chuyển đổi giá trị sang kiểu số nguyên
+            const num = parseInt(inputVal);
+
+            // Kiểm tra chẵn hay lẻ
+            if (num % 2 === 0) {
+                document.getElementById('resultText').innerText = num + ' là số chẵn.';
+            } else {
+                document.getElementById('resultText').innerText = num + ' là số lẻ.';
+            }
+        }
+    </script>
+</body>
+</html>
